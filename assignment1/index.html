@@ -11,6 +11,21 @@
         font-size: 1.3em;
         font-weight: bold;
       }
+      .hint {
+        font-size: small;
+        padding-bottom: 1em;
+      }
+      .border {
+        border: solid;
+      }
+
+      .border-success {
+        border-color: green;
+      }
+
+      .border-danger {
+        border-color: #a94442;
+      }
     </style>
   </head>
   <body ng-app="LunchCheck">
@@ -19,17 +34,21 @@
 
       <div class="form-group">
         <input
+          ng-model="lunch"
           id="lunch-menu"
           type="text"
           placeholder="list comma separated dishes you usually have for lunch"
-          class="form-control"
+          class="form-control {{border_class}}"
         />
       </div>
+      <div class="hint">(empty items, such as ' ', are not counted)</div>
       <div class="form-group">
-        <button class="btn btn-default">Check If Too Much</button>
+        <button ng-click="check()" class="btn btn-default">
+          Check If Too Much
+        </button>
       </div>
-      <div class="form-group message">
-        <!-- Your message can go here. -->
+      <div class="form-group message {{message_class}}">
+        {{message}}
       </div>
     </div>
   </body>
