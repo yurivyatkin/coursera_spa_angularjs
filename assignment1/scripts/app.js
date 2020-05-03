@@ -17,7 +17,6 @@
         .map((item) => item.trim())
         .filter((item) => !!item);
       var items_count = items.length;
-      console.log('items', items);
       if (items_count < 1) {
         $scope.message = 'Please enter data first';
         $scope.message_class = 'text-danger';
