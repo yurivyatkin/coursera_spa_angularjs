@@ -27,6 +27,7 @@
       { name: 'sausages', quantity: 2 },
       { name: 'eggs', quantity: 15 },
       { name: 'cookies', quantity: 100 },
+      { name: 'flowers', quantity: 3 },
     ];
     var toBuyItems = initialItems;
     var boughtItems = [];
