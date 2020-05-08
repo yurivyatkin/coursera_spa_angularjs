@@ -11,6 +11,7 @@
   function ToBuyController(ShoppingListCheckOffService) {
     var toBuy = this;
     toBuy.items = ShoppingListCheckOffService.getToBuyItems();
+    toBuy.checkOff = ShoppingListCheckOffService.checkOff;
   }
 
   AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
@@ -33,6 +34,10 @@
     };
     service.getBoughtItems = function () {
       return boughtItems;
+    };
+    service.checkOff = function (idx) {
+      var checkOffItem = toBuyItems.splice(idx, 1)[0];
+      boughtItems.push(checkOffItem);
     };
   }
 })();
