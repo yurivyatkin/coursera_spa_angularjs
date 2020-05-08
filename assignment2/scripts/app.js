@@ -24,8 +24,9 @@
     var service = this;
     var initialItems = [
       { name: 'cookies', quantity: 10 },
-      { name: 'sausages', quantity: 10 },
-      { name: 'eggs', quantity: 10 },
+      { name: 'sausages', quantity: 2 },
+      { name: 'eggs', quantity: 15 },
+      { name: 'cookies', quantity: 100 },
     ];
     var toBuyItems = initialItems;
     var boughtItems = [];
