@@ -1,7 +1,7 @@
 h1 {
   margin-bottom: 30px;
 }
-input[type="text"] {
+input[type='text'] {
   width: 200px;
   float: left;
 }
@@ -49,4 +49,8 @@ input[type="text"] {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.clear {
+  clear: both;
 }

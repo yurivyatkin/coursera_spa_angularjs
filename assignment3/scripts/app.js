@@ -5,7 +5,8 @@
     .module('NarrowItDownApp', [])
     .controller('NarrowItDownController', NarrowItDownController)
     .service('MenuSearchService', MenuSearchService)
-    .constant('ApiBasePath', 'https://davids-restaurant.herokuapp.com/');
+    .constant('ApiBasePath', 'https://davids-restaurant.herokuapp.com/')
+    .directive('foundItems', FoundItemsDirective);
 
   NarrowItDownController.$inject = ['MenuSearchService'];
   function NarrowItDownController(MenuSearchService) {
@@ -21,6 +22,9 @@
         .catch(function (error) {
           console.log('An error occurred:', error);
         });
+    };
+    ctrl.remove = function (idx) {
+      ctrl.found.splice(idx, 1);
     };
   }
 
@@ -42,6 +46,17 @@
       function hasSearchTermInDescription(item) {
         return item.description.includes(searchTerm);
       }
+    };
+  }
+
+  function FoundItemsDirective() {
+    return {
+      restrict: 'E',
+      templateUrl: 'foundItems.html',
+      scope: {
+        found: '<foundItems',
+        remove: '<onRemove',
+      },
     };
   }
 })();
