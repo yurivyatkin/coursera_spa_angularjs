@@ -13,15 +13,27 @@
     var ctrl = this;
     ctrl.searchTerm = '';
     ctrl.found = [];
+    ctrl.nothing = false;
     ctrl.narrowItDown = function (searchTerm) {
-      var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
-      promise
-        .then(function (result) {
-          ctrl.found = result;
-        })
-        .catch(function (error) {
-          console.log('An error occurred:', error);
-        });
+      if (searchTerm) {
+        var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
+        promise
+          .then(function (result) {
+            if (result.length > 0) {
+              ctrl.found = result;
+              ctrl.nothing = false;
+            } else {
+              ctrl.found = [];
+              ctrl.nothing = true;
+            }
+          })
+          .catch(function (error) {
+            console.log('An error occurred:', error);
+          });
+      } else {
+        ctrl.found = [];
+        ctrl.nothing = true;
+      }
     };
     ctrl.remove = function (idx) {
       ctrl.found.splice(idx, 1);
@@ -56,6 +68,7 @@
       scope: {
         found: '<foundItems',
         remove: '<onRemove',
+        nothing: '<nothing'
       },
     };
   }
