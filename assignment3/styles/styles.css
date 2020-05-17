@@ -54,3 +54,11 @@ input[type='text'] {
 .clear {
   clear: both;
 }
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}

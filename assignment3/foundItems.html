@@ -1,6 +1,18 @@
-<ul>
-  <li ng-repeat="item in found">
-    {{item.name}}&nbsp;{{item.short_name}}&nbsp;{{item.description}}
-    <button ng-click="remove($index)">Don't want this one!</button>
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="item in found">
+    <h2 class="left">
+      {{item.name}}
+    </h2>
+    <div class="label label-default text-uppercase lead right">
+      <strong>{{item.short_name}}</strong>
+    </div>
+    <div class="clear">
+      <em>{{item.description}}</em>
+    </div>
+    <div>
+      <button class="btn btn-danger btn-xs" ng-click="remove($index)">
+        Don't want this one!
+      </button>
+    </div>
   </li>
 </ul>
