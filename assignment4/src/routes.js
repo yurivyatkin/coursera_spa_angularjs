@@ -7,5 +7,14 @@
   function RoutesConfig($stateProvider, $urlRouterProvider) {
     // Redirect to home page if no other URL matches
     $urlRouterProvider.otherwise('/');
+
+    // *** Set up UI states ***
+    $stateProvider
+
+      // Home page
+      .state('home', {
+        url: '/',
+        templateUrl: 'src/home.template.html',
+      });
   }
 })();
