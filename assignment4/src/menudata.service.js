@@ -28,7 +28,7 @@
       }).then(function (response) {
         // result is an object {menu_items, category} where menu_items is an array of objects:
         // {id, short_name, name, description, price_small, price_large, small_portion_name, large_portion_name}
-        return response.data.menu_items;
+        return response.data;
       });
     };
   }

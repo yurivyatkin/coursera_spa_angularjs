@@ -30,6 +30,16 @@
             },
           ],
         },
+      })
+
+      // Items page
+      .state('items', {
+        url: '/items/{categoryShortName}',
+        templateUrl: 'src/items.template.html',
+        controller: 'ItemsController as itemsCtrl',
+        params: {
+          categoryShortName: null,
+        },
       });
   }
 })();
