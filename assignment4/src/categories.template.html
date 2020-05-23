@@ -1,3 +1,12 @@
-<h1 class="text-center">Menu Categories in Our Restaurant</h1>
-
-<categories-list categories="categoriesCtrl.categories"></categories-list>
+<ul class="container list-group">
+  <li class="row list-group-item" ng-repeat="category in $ctrl.categories">
+    <div class="col-xs-1">
+      <span class="label label-default">{{category.short_name}}</span>
+    </div>
+    <div class="col-xs-11">
+      <a ui-sref="items({categoryShortName: category.short_name})"
+        >{{category.name}}</a
+      >
+    </div>
+  </li>
+</ul>

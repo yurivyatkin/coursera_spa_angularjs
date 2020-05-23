@@ -20,7 +20,7 @@
       // Categories page
       .state('categories', {
         url: '/categories',
-        templateUrl: 'src/categories.template.html',
+        templateUrl: 'src/categories-main.template.html',
         controller: 'CategoriesController as categoriesCtrl',
         resolve: {
           categories: [
@@ -35,7 +35,7 @@
       // Items page
       .state('items', {
         url: '/items/{categoryShortName}',
-        templateUrl: 'src/items.template.html',
+        templateUrl: 'src/items-main.template.html',
         controller: 'ItemsController as itemsCtrl',
         params: {
           categoryShortName: null,
