@@ -1,0 +1,11 @@
+<ul class="container list-group">
+  <li
+    class="row list-group-item"
+    ng-repeat="category in $ctrl.categories"
+  >
+    <div class="col-xs-1">
+      <span class="label label-default">{{category.short_name}}</span>
+    </div>
+    <div class="col-xs-11">{{category.name}}</div>
+  </li>
+</ul>
