@@ -27,6 +27,12 @@
             },
           ],
         },
+      })
+      .state('user.myinfo', {
+        url: '/myinfo',
+        templateUrl: 'src/user/my-info/my-info.html',
+        controller: 'MyInfoController',
+        controllerAs: 'myInfoCtrl',
       });
   }
 })();

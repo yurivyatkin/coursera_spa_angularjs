@@ -1,0 +1,37 @@
+<div class="container">
+  <h2 class="text-center">My Info</h2>
+
+  <div ng-if="!!myInfoCtrl.currentUser">
+    <div class="row">
+      <div class="col-sm-6">
+        <table class="table">
+          <tr>
+            <td>First Name</td>
+            <td>{{myInfoCtrl.currentUser.firstName}}</td>
+          </tr>
+          <tr>
+            <td>Last Name</td>
+            <td>{{myInfoCtrl.currentUser.lastName}}</td>
+          </tr>
+          <tr>
+            <td>Email Address</td>
+            <td>{{myInfoCtrl.currentUser.emailAddress}}</td>
+          </tr>
+          <tr>
+            <td>Phone Number</td>
+            <td>{{myInfoCtrl.currentUser.phoneNumber}}</td>
+          </tr>
+        </table>
+      </div>
+      <menu-item
+        ng-if="myInfoCtrl.menuItem"
+        menu-item="myInfoCtrl.menuItem"
+      ></menu-item>
+      <div ng-if="!myInfoCtrl.menuItem">No such menu number exists</div>
+    </div>
+  </div>
+
+  <div ng-if="!myInfoCtrl.currentUser">
+    <p>Not Signed Up Yet. <a ui-sref="user.signup">Sign up Now!</a></p>
+  </div>
+</div>

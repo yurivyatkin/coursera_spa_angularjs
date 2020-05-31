@@ -19,7 +19,7 @@
         lastName: signUpCtrl.lastName,
         emailAddress: signUpCtrl.emailAddress,
         phoneNumber: signUpCtrl.phoneNumber,
-        favoriteItem: signUpCtrl.favoriteItem,
+        favoriteItem: signUpCtrl.favoriteItem.toUpperCase(),
       };
       if (UserService.setCurrentUser(newUser)) {
         signUpCtrl.isUserSaved = true;
@@ -31,8 +31,8 @@
       // menuItems = {menu_items: [{short_name: ..., },...]}
       return !!menuItems.menu_items.find(function (item) {
         return (
-          item.short_name.toLowerCase() ===
-          signUpCtrl.favoriteItem.toLowerCase()
+          item.short_name.toUpperCase() ===
+          signUpCtrl.favoriteItem.toUpperCase()
         );
       });
     };
